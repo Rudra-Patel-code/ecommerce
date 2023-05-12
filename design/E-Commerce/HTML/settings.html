@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>iCart - Home</title>
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../CSS/settings.css" />
+        <!-- JavaScript -->
+        <script src="../JavaScript/index.js"></script>
+        <!-- Font Awesome Kit (for icons) -->
+        <script
+            src="https://kit.fontawesome.com/d3ec6f765d.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <navbar>
+            <!-- App Logo -->
+            <center>
+                <logo>iCart</logo>
+            </center>
+
+            <!-- Menu Button for less width devices -->
+            <button class="hamburger" onclick="OpenNavBar()">
+                <hamburger-line></hamburger-line>
+                <hamburger-line></hamburger-line>
+                <hamburger-line></hamburger-line>
+            </button>
+
+            <navbar-container>
+                <!-- Navigation Bar Categories, cat = category -->
+                <ul class="navbar-catlist-container">
+                    <li class="list-cat">
+                        <a href="#"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-check-to-slot"></i>
+                            Recomended</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-star"></i> Favourites</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-arrow-trend-up"></i>
+                            Trending</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-newspaper"></i> New</a
+                        >
+                    </li>
+                </ul>
+
+                <div class="hr"></div>
+
+                <!-- Navigation Bar Categories, cat = category -->
+                <ul class="navbar-catlist-container">
+                    <li class="list-cat">
+                        <a href="#"><i class="fa-solid fa-user"></i> Account</a>
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-list-ul"></i> Orders</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-cart-shopping"></i> Cart</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#" class="active"
+                            ><i class="fa-solid fa-gear"></i> Settings</a
+                        >
+                    </li>
+                </ul>
+            </navbar-container>
+        </navbar>
+
+        <!-- Main Body goes here -->
+        <main>
+
+            <!-- Theme Switch -->
+            <center>
+                <theme-switch>
+                    <div style="margin-right: 10px">Light / Dark</div>
+                    <label class="toggle-theme">
+                        <input type="checkbox" onchange="SwitchTheme()" />
+                        <span class="slider"></span>
+                    </label>
+                </theme-switch>
+            </center>
+
+            <div class="account-info">
+                <div class="user-image">
+                    <img
+                        src="../Assets/Images/Product.jpg"
+                        class="image"
+                        alt=""
+                    />
+                </div>
+                <div class="user-info">
+                    <h1>Chetan Panchal</h1>
+                    <p>User ID - 123456789</p>
+                </div>
+            </div>
+            <hr />
+            <ul class="settings-container">
+                <li class="setting">
+                    <div class="setting-item">
+                        <div class="h1">Account</div>
+                        <div class="p">Change Account Details</div>
+                    </div>
+                    <div class="icon"><i class="fa-solid fa-angle-right"></i></div>
+                </li>
+                <li class="setting">
+                    <div class="setting-item">
+                        <div class="h1">Address</div>
+                        <div class="p">Edit your Adresses</div>
+                    </div>
+                    <div class="icon"><i class="fa-solid fa-angle-right"></i></div>
+                </li>
+                <li class="setting">
+                    <div class="setting-item">
+                        <div class="h1">Checkout</div>
+                        <div class="p">Edit your Payment Methods</div>
+                    </div>
+                    <div class="icon"><i class="fa-solid fa-angle-right"></i></div>
+                </li>
+                <li class="setting">
+                    <div class="setting-item">
+                        <div class="h1">Ullu</div>
+                        <div class="p">Ye toh mujhe bhi nahi pata hai</div>
+                    </div>
+                    <div class="icon"><i class="fa-solid fa-angle-right"></i></div>
+                </li>
+                <li class="setting">
+                    <div class="setting-item">
+                        <div class="h1">Lion</div>
+                        <div class="p">Kuchh toh Hoga hi</div>
+                    </div>
+                    <div class="icon"><i class="fa-solid fa-angle-right"></i></div>
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>iCart - Home</title>
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../CSS/index.css" />
+        <!-- JavaScript -->
+        <script src="../JavaScript/index.js"></script>
+        <!-- Font Awesome Kit (for icons) -->
+        <script
+            src="https://kit.fontawesome.com/d3ec6f765d.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <navbar>
+            <!-- App Logo -->
+            <center>
+                <logo>iCart</logo>
+            </center>
+
+            <!-- Menu Button for less width devices -->
+            <button class="hamburger" onclick="OpenNavBar()">
+                <hamburger-line></hamburger-line>
+                <hamburger-line></hamburger-line>
+                <hamburger-line></hamburger-line>
+            </button>
+
+            <navbar-container>
+                <!-- Navigation Bar Categories, cat = category -->
+                <ul class="navbar-catlist-container">
+                    <li class="list-cat">
+                        <a href="#" class="active"
+                            ><i class="fa-solid fa-house"></i> Home</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-check-to-slot"></i>
+                            Recomended</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-star"></i> Favourites</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-arrow-trend-up"></i>
+                            Trending</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-newspaper"></i> New</a
+                        >
+                    </li>
+                </ul>
+
+                <div class="hr"></div>
+
+                <!-- Navigation Bar Categories, cat = category -->
+                <ul class="navbar-catlist-container">
+                    <li class="list-cat">
+                        <a href="#"><i class="fa-solid fa-user"></i> Account</a>
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-list-ul"></i> Orders</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="#"
+                            ><i class="fa-solid fa-cart-shopping"></i> Cart</a
+                        >
+                    </li>
+                    <li class="list-cat">
+                        <a href="settings.html"
+                            ><i class="fa-solid fa-gear"></i> Settings</a
+                        >
+                    </li>
+                </ul>
+            </navbar-container>
+        </navbar>
+
+        <!-- Main Body goes here -->
+        <main>
+            <!-- Search Bar with Button -->
+            <search-container>
+                <form>
+                    <input
+                        class="search-input"
+                        type="search"
+                        placeholder="Search"
+                    />
+                    <button class="search-btn">
+                        Search <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </search-container>
+
+            <!-- Theme Switch -->
+            <center>
+                <theme-switch>
+                    <div style="margin-right: 10px">Light / Dark</div>
+                    <label class="toggle-theme">
+                        <input type="checkbox" onchange="SwitchTheme()" />
+                        <span class="slider"></span>
+                    </label>
+                </theme-switch>
+            </center>
+
+            <!--Product Category Tags-->
+            <ul class="category-tags">
+                <li class="tag"><a href="#" class="active-tag">Tag 1</a></li>
+                <li class="tag"><a href="#">Tag 2</a></li>
+                <li class="tag"><a href="#">Tag 3</a></li>
+                <li class="tag"><a href="#">Tag 4</a></li>
+                <li class="tag"><a href="#">Tag 5</a></li>
+            </ul>
+
+            <!-- Product List here -->
+            <ul class="product-cards">
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+                <li class="product-card">
+                    <div class="card">
+                        <img
+                            src="../Assets/Images/Product.jpg"
+                            alt="Product Image"
+                            class="card-image"
+                        />
+                        <div class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Vero, mollitia!
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>
