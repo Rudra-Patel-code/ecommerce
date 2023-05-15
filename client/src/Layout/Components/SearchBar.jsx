@@ -9,7 +9,7 @@ const SearchBar = ({ handleSubmit }) => {
             type="text "
             className="border-2  focus:outline-none px-3 py-1 focus:border-purple-500 border-slate-400 rounded-md "
           />
-          <div className="px-3 py-[5.5px] bg-purple-500 rounded-md text-white">
+          <div className="px-3 py-[5.5px] bg-purple-500 cursor-pointer rounded-md text-white">
             <AiOutlineSearch className="text-xl md:text-2xl" />
           </div>
         </div>

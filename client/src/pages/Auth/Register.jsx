@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import ToHome from "../../utils/ToHome";
+import { FaSpinner } from "react-icons/fa";
+import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../../redux/actions/authActions";
 
 const Register = () => {
   const [isPass, setIsPass] = useState(false);
@@ -12,10 +16,24 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+  const { loading, message, error } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
+    dispatch(register(name, email, password, confirmPass));
   };
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+      dispatch({ type: "clearError" });
+    }
+    if (message) {
+      toast.success(message);
+      dispatch({ type: "clearMessage" });
+    }
+  }, [dispatch, error, message]);
 
   return (
     <>
@@ -25,6 +43,7 @@ const Register = () => {
           <h1 className="mb-5 mt-40 text-xl text-center ">
             Welcome To <span className="text-purple-700">iCart</span> <br />
           </h1>
+
           <div>
             <form
               className="flex-col justify-center items-center w-full"
@@ -56,6 +75,8 @@ const Register = () => {
                 <RiLockPasswordFill className="text-base md:text-xl mx-2" />
                 <input
                   type={isPass ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="border-b-2 text-sm md:text-base relative border-black px-2 py-[4px] focus:outline-none focus:border-purple-500"
                   required
                   placeholder="Password"
@@ -72,11 +93,40 @@ const Register = () => {
                   />
                 )}
               </div>
+              <div className="flex items-center mx-[-8px] mb-3">
+                <RiLockPasswordFill className="text-base md:text-xl mx-2" />
+                <input
+                  type={isPass ? "text" : "password"}
+                  value={confirmPass}
+                  onChange={(e) => setConfirmPass(e.target.value)}
+                  className="border-b-2 text-sm md:text-base relative border-black px-2 py-[4px] focus:outline-none focus:border-purple-500"
+                  required
+                  placeholder="Confirm Password"
+                />
+                {!isPass ? (
+                  <AiFillEye
+                    className=" text-xl md:text-2xl mx-1 cursor-pointer"
+                    onClick={() => setIsPass(!isPass)}
+                  />
+                ) : (
+                  <AiFillEyeInvisible
+                    className=" text-xl md:text-2xl mx-1 cursor-pointer"
+                    onClick={() => setIsPass(!isPass)}
+                  />
+                )}
+              </div>
               <button
-                className="bg-purple-500 font-sans cursor-pointer rounded-lg px-5 py-2 ml-[50%] translate-x-[-50%] text-white"
+                className="bg-purple-500 flex items-center gap-3 font-sans cursor-pointer rounded-lg px-5 py-2 ml-[50%] translate-x-[-50%] text-white"
                 type="submit"
               >
-                Login
+                {loading ? (
+                  <>
+                    <FaSpinner className="animate-spin" />
+                    Registering
+                  </>
+                ) : (
+                  <>Register</>
+                )}
               </button>
             </form>
           </div>

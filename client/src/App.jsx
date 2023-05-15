@@ -3,6 +3,7 @@ import Header from "./Layout/Header";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const isAuth = false;
@@ -30,6 +31,7 @@ function App() {
           }
         />
       </Routes>
+      <Toaster />
     </Router>
   );
 }
