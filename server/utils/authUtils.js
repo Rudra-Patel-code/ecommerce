@@ -6,8 +6,7 @@ import jwt from "jsonwebtoken";
 export const isAuthenticated = asyncHandler(async (req, res, next) => {
   const { token } = req.cookies;
 
-  if (!token)
-    return next(new CustomError("Login requires to access this resource", 400));
+  if (!token) return next(new CustomError("Please Login", 400));
 
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
   const id = decoded._id;

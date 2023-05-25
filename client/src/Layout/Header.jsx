@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ImCross } from "react-icons/im";
 import { AiFillHome, AiFillStar } from "react-icons/ai";
 import { BsFillCartFill } from "react-icons/bs";
@@ -7,11 +7,14 @@ import { Link } from "react-router-dom";
 import { TbSquareRoundedCheckFilled } from "react-icons/tb";
 import SearchBar from "./Components/SearchBar";
 import Account from "./Components/Account";
+import { useSelector } from "react-redux";
 
 const linkStyles =
   "flex py-1 px-2 my-2 rounded-md hover:bg-slate-300 justify-start text-base md:text-lg items-center gap-2 ";
 
 const Header = () => {
+  const { isAuth } = useSelector((state) => state.auth);
+
   const [isSideBar, setIsSideBar] = useState(false);
 
   const closeSidebar = () => setIsSideBar(false);
@@ -27,24 +30,26 @@ const Header = () => {
         <div className="flex p-3 items-center ">
           <div className="flex items-center p-2 gap-2 flex-1 ">
             <GiHamburgerMenu
-              className={`text-xl md:text-2xl ${
+              className={`text-xl hover:cursor-pointer md:text-2xl ${
                 isSideBar ? "hidden" : "block"
               } `}
               onClick={openSidebar}
             />
             <ImCross
-              className={`${isSideBar ? "block" : "hidden"}`}
+              className={`text-xl hover:cursor-pointer md:text-2xl ${
+                isSideBar ? "block" : "hidden"
+              }`}
               onClick={closeSidebar}
             />
-            <logo className="text-xl md:text-2xl hover:cursor-pointer hover:text-purple-500 font-bold text-purple-700">
+            <h1 className="text-xl md:text-2xl hover:cursor-pointer hover:text-purple-500 hover:underline font-bold text-purple-700">
               iCart
-            </logo>
+            </h1>
           </div>
 
           {!isSideBar && (
             <>
               <SearchBar handleSubmit={handleSubmit} />
-              <Account />
+              <Account isAuth={isAuth} />
             </>
           )}
         </div>
