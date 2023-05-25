@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="fixed max-w-7xl ml-[50%]  translate-x-[-50%] top-0 left-0 text-black  w-[100%] h-[100%] ">
+      <div className="fixed ml-[50%]  translate-x-[-50%] top-0 left-0 text-black  w-[100%] h-[100%] ">
         <div className="flex p-3 items-center ">
           <div className="flex items-center p-2 gap-2 flex-1 ">
             <GiHamburgerMenu
